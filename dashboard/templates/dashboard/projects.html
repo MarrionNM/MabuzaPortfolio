@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="dash-Content projects">
+
+    <h3>Projects</h3>
+
+    <div class="tag-types">
+
+    </div>
+
+    {% for _ in ran %}
+        <div class="proj">
+            <div class="proj-imgs">
+                <img src="{{proj.image.url}}" alt="">
+            </div>
+
+            <div class="proj-data">
+                <h3>{{proj.title}}</h3>
+                <p>{{proj.description}}</p>
+            </div>
+            <div class="proj-tags">
+                <i class="fa-brands fa-github-square"></i>
+                <i class="fa-brands fa-github-square"></i>
+                <i class="fa-brands fa-github-square"></i>
+            </div>
+        </div>
+    {% endfor %}
+
+
+</div>
+{% endblock body %}

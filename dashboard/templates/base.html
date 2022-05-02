@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Nkosinathi Mabuza</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+
+        <div class="side-nav">
+
+            <a href="{% url 'profile:profile' %}">
+                <div class="grp hoe">
+                    <h2>{{ps.name}} {{ps.surname}}</h2>
+                </div>
+            </a>
+            <a href="{% url 'profile:biography' %}">
+                <div class="grp">
+                    <i class="fa-solid fa-circle-info fa-lg"></i>
+                    <p>BIOGRAPHY</p>
+                </div>
+            </a>
+            <a href="{% url 'profile:skills' %}">
+                <div class="grp">
+                    <i class="fa-solid fa-chart-simple fa-lg"></i>
+                    <p>SKILLS</p>
+                </div>
+            </a>
+            <a href="{% url 'profile:projects' %}">
+                <div class="grp">
+                    <i class="fa-solid fa-clipboard-list fa-lg"></i>
+                    <p>PROJECTS</p>
+                </div>
+            </a>
+            <a href="{% url 'profile:contact' %}">
+                <div class="grp">
+                    <i class="fa-solid fa-envelope fa-lg"></i>
+                    <p>CONTACT</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="main">
+            {% block body %}
+
+            {% endblock body %}    
+        </div>
+
+    </body>
+</html>

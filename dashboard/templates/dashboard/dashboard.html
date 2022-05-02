@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="dash-Content dashboard">
+
+    <div class="dash-Content-Caption">
+        <img src="{{ ps.image.url }}" alt="Avatar">
+        <h2>{{ ps.name }} {{ ps.middle_name }} {{ ps.surname }}</h2>
+        <P>{{ ps.profile_caption }}</P>
+    </div>
+
+    <div class="dash-Content-services">
+        <i class="fa-brands fa-android"></i>
+        <i class="fa-brands fa-apple"></i>
+        <i class="fa-brands fa-github-square"></i>
+        <i class="fa-brands fa-github-square"></i>
+    </div>
+</div>
+
+
+{% endblock body %}
