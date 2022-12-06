@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Person, Project
+from .models import Person, Project, Tag, Information, Skill
 # Create your views here.
 
 def profile(response):
@@ -8,15 +8,29 @@ def profile(response):
     return render(response, "dashboard/dashboard.html", context)
 
 def biography(response):
-    return render(response, "dashboard/biography.html", {})
+    infomation = Information.objects.get(id='1')
+    context = {'infomation': infomation}
+    return render(response, "dashboard/biography.html", context)
 
 def skills(response):
-    return render(response, "dashboard/skills.html", {})
+    skills = Skill.objects.all()
+    tags = Tag.objects.all()
+    context = {'skills': skills}
+    return render(response, "dashboard/skills.html", context)
 
 def projects(response):
-    projects = Project.objects.get(id='01')
-    context = {'proj': projects, 'ran': range(10)}
+    person = Person.objects.get(id='01')
+    projects = Project.objects.all()
+    context = {'proj': projects, 'ps': person}
+
     return render(response, "dashboard/projects.html", context)
 
 def contact(response):
-    return render(response, "dashboard/contact.html", {})
+    person = Person.objects.get(id='01')
+    context = {'ps': person}
+    return render(response, "dashboard/contact.html", context)
+
+def tags(response):
+    tag = Person.objects.get(id='01')
+    context = {'ps': person}
+    return render(response, "dashboard/contact.html", context)

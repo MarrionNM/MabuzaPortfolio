@@ -1,33 +1,26 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block body %}
 
-{% block body %}
+<div class="dash-Content">
+  <h3>Projects</h3>
+  <div class="container projects">
+    {% for project in proj %}
+    <div class="card">
+      <div class="card-imgs">
+        <img src="{{project.image.url}}" alt="" />
+      </div>
 
-<div class="dash-Content projects">
-
-    <h3>Projects</h3>
-
-    <div class="tag-types">
-
+      <div class="card-data">
+        <a href="{{project.link}}" target="blank"><h3>{{project.title}}</h3></a>
+        <p>{{project.description}}</p>
+      </div>
+      <div class="card-tags">
+        {% for tag in project.tags.all %}
+        <img src="{{tag}}" alt="" />
+        {% endfor %}
+      </div>
     </div>
-
-    {% for _ in ran %}
-        <div class="proj">
-            <div class="proj-imgs">
-                <img src="{{proj.image.url}}" alt="">
-            </div>
-
-            <div class="proj-data">
-                <h3>{{proj.title}}</h3>
-                <p>{{proj.description}}</p>
-            </div>
-            <div class="proj-tags">
-                <i class="fa-brands fa-github-square"></i>
-                <i class="fa-brands fa-github-square"></i>
-                <i class="fa-brands fa-github-square"></i>
-            </div>
-        </div>
     {% endfor %}
-
-
+  </div>
+  <br/>
 </div>
 {% endblock body %}
