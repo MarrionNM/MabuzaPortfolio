@@ -29,8 +29,9 @@ class Project(models.Model):
     description = models.TextField(max_length=1000)
     image = models.ImageField(upload_to='posters')
     
-    trailer = models.CharField(max_length=1000, null=True)
+    link = models.CharField(max_length=1000, null=True)
     tags = models.ManyToManyField(Tag, blank=True)
+    
     def __str__(self):
         return self.title
 
@@ -45,7 +46,6 @@ class Information(models.Model):
 class Skill(models.Model):
     skill = models.TextField(max_length=50)
     rate = models.IntegerField()
-    # icon = models.ImageField(upload_to='icon', null=True)
 
     def __str__(self):
         return self.skill
