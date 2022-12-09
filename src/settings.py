@@ -27,8 +27,7 @@ SECRET_KEY = 'django-insecure-h%hs7h5w8cl3-@isx%gl9tiowqmhmf+%ec#6)@u4%*k00@)#2&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*', 'devmabuza.herokuapp.com']
-
+ALLOWED_HOSTS = ['*', 'mabuzaportfolio-production.up.railway.app']
 
 # Application definition
 
